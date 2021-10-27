@@ -13,6 +13,7 @@ describe('test suite', function () {
         cy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c')
         cy.get('.btn').click()
         cy.contains('Tester Hotel Overview')
+<<<<<<< HEAD
         cy.get(':nth-child(1) > .btn').click()
         cy.contains('Tester Hotel')
         cy.get('h2 > .btn').click()
@@ -45,6 +46,11 @@ describe('test suite', function () {
         cy.get(':nth-child(3) > input').type('0767354625')
         cy.get('.blue').click()
         cy.contains('Clients')
+=======
+        cy.get('.user > .btn').click()
+        cy.contains('Login')
+    
+>>>>>>> 503c1ec03f2433e6d95aac37a58aa48f2fde0ad0
 
 
     })
