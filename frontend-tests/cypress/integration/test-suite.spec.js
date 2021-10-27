@@ -3,7 +3,7 @@
 //This is test suite
 describe('test suite', function () {
 
-    //this is a test case 
+    //these are test cases 
 
     it('Create new room', function () {
         cy.visit('http://localhost:3000')
@@ -13,7 +13,6 @@ describe('test suite', function () {
         cy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c')
         cy.get('.btn').click()
         cy.contains('Tester Hotel Overview')
-<<<<<<< HEAD
         cy.get(':nth-child(1) > .btn').click()
         cy.contains('Tester Hotel')
         cy.get('h2 > .btn').click()
@@ -21,6 +20,7 @@ describe('test suite', function () {
         cy.get(':nth-child(1) > select').select('Single')
         cy.get(':nth-child(2) > input').type('103')
         cy.get(':nth-child(3) > input').type('1')
+        cy.get('.checkbox').click()
         cy.get(':nth-child(5) > input').type('1000')
         cy.get(':nth-child(6) > select').select('Balcony')
         cy.get('.blue').click()
@@ -46,16 +46,11 @@ describe('test suite', function () {
         cy.get(':nth-child(3) > input').type('0767354625')
         cy.get('.blue').click()
         cy.contains('Clients')
-=======
-        cy.get('.user > .btn').click()
-        cy.contains('Login')
-    
->>>>>>> 503c1ec03f2433e6d95aac37a58aa48f2fde0ad0
 
 
     })
 
-    it('Edit created client', function () {
+    it('Edit new client', function () {
         cy.get(':nth-child(3) > .action > img').click()
         cy.get('.menu > :nth-child(1)').click()
         //cy.contains('Client: 4')
@@ -81,11 +76,35 @@ describe('test suite', function () {
 
     })
 
-    it('', function () {
+    it('Make a new reservation', function () {
+        cy.get(':nth-child(4) > .btn').click()
+        cy.get('h2 > .btn').click()
+        cy.contains('New Reservation')
+        cy.get(':nth-child(1) > input').type('2021-12-23')
+        cy.get(':nth-child(2) > input').type('2021-12-31')
+        cy.get(':nth-child(3) > select').select('Mikael Eriksson (#2)')
+        cy.get(':nth-child(4) > select').select('Floor 1, Room 101')
+        cy.get(':nth-child(5) > select').select('ID: 1')
+        cy.get('.blue').click()
+        cy.contains('Reservations')
+        cy.get(':nth-child(3) > .btn').click()
 
     })
 
-    it('', function () {
+    it('Delete new reservation', function () {
+        cy.get(':nth-child(4) > .btn').click()
+        cy.get(':nth-child(2) > .action > img').click()
+        cy.get('.menu > :nth-child(2)').click()
+        cy.contains('Reservations')
+        cy.get(':nth-child(3) > .btn').click()
+        cy.contains('Tester Hotel Overview')
+
+
+        
+
+
+
+
 
     })
 
