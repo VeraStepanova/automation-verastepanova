@@ -1,20 +1,32 @@
 /// <reference types="cypress" />
 
+
 //This is test suite
 describe('test suite', function () {
 
-    //these are test cases 
-
-    it('Create new room', function () {
+    this.beforeEach(function(){
         cy.visit('http://localhost:3000')
         cy.title().should('include', 'Hotel')
-        cy.contains('Login')
         cy.get(':nth-child(1) > input').type('tester01')
         cy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c')
         cy.get('.btn').click()
+
+    })
+
+    this.afterEach(function(){
+        cy.get('.user > .btn').click()
+
+    })
+
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        // returning false here prevents Cypress from
+        // failing the test
+        return false
+      })
+
+    it('Create new room', function () {
         cy.contains('Tester Hotel Overview')
         cy.get(':nth-child(1) > .btn').click()
-        cy.contains('Tester Hotel')
         cy.get('h2 > .btn').click()
         cy.contains('New Room')
         cy.get(':nth-child(1) > select').select('Single')
@@ -25,20 +37,17 @@ describe('test suite', function () {
         cy.get(':nth-child(6) > select').select('Balcony')
         cy.get('.blue').click()
         cy.contains('Rooms')
-    })
-
-    it('Delete created room', function () {
-
         cy.get(':nth-child(3) > .action > img').click()
         cy.get('.menu > :nth-child(2)').click()
         cy.contains('Rooms')
         cy.get(':nth-child(3) > .btn').click()
-        cy.contains('Tester Hotel Overview')
+
     })
 
+
     it('Create new client', function () {
+        cy.contains('Tester Hotel Overview')
         cy.get('.blocks > :nth-child(2) > .btn').click()
-        cy.contains('Clients')
         cy.get('h2 > .btn').click()
         cy.contains('New Client')
         cy.get(':nth-child(1) > input').type('Vera Stepanova')
@@ -46,11 +55,6 @@ describe('test suite', function () {
         cy.get(':nth-child(3) > input').type('0767354625')
         cy.get('.blue').click()
         cy.contains('Clients')
-
-
-    })
-
-    it('Edit new client', function () {
         cy.get(':nth-child(3) > .action > img').click()
         cy.get('.menu > :nth-child(1)').click()
         //cy.contains('Client: 4')
@@ -60,12 +64,6 @@ describe('test suite', function () {
         cy.contains('Clients')
         cy.get(':nth-child(3) > .btn').click()
         cy.contains('Tester Hotel Overview')
-
-
-    })
-
-
-    it('Delete created client', function () {
         cy.get('.blocks > :nth-child(2) > .btn').click()
         cy.get(':nth-child(3) > .action > img').click()
         cy.get('.menu > :nth-child(2)').click()
@@ -77,6 +75,7 @@ describe('test suite', function () {
     })
 
     it('Make a new reservation', function () {
+        cy.contains('Tester Hotel Overview')
         cy.get(':nth-child(4) > .btn').click()
         cy.get('h2 > .btn').click()
         cy.contains('New Reservation')
@@ -88,10 +87,6 @@ describe('test suite', function () {
         cy.get('.blue').click()
         cy.contains('Reservations')
         cy.get(':nth-child(3) > .btn').click()
-
-    })
-
-    it('Delete new reservation', function () {
         cy.get(':nth-child(4) > .btn').click()
         cy.get(':nth-child(2) > .action > img').click()
         cy.get('.menu > :nth-child(2)').click()
@@ -99,18 +94,48 @@ describe('test suite', function () {
         cy.get(':nth-child(3) > .btn').click()
         cy.contains('Tester Hotel Overview')
 
+    })
 
+    it('Create new bill', function () {
+        cy.contains('Tester Hotel Overview')
+        cy.get(':nth-child(3) > .btn').click() 
+        cy.get('h2 > .btn').click()
+        cy.contains('New Bill')
+        cy.get('input').type('3500')
+        cy.get('.checkbox').click()
+        cy.get('.blue').click()
+        cy.contains('Bills')
+        cy.get(':nth-child(2) > .action > img').click()
+        cy.get('.menu > :nth-child(2)').click()
+        cy.get(':nth-child(3) > .btn').click()
+        cy.contains('Tester Hotel Overview')
+
+    })
+
+    it('Edit new bill', function () {
+        cy.contains('Tester Hotel Overview')
+        cy.get(':nth-child(3) > .btn').click() 
+        cy.get('h2 > .btn').click()
+        cy.contains('New Bill')
+        cy.get('input').type('3500')
+        cy.get('.checkbox').click()
+        cy.get('.blue').click()
+        cy.contains('Bills')
+        cy.get(':nth-child(2) > .action > img').click()
+        cy.get('.menu > :nth-child(1)').click()
+        cy.get('.checkbox').click()
+        cy.get('.blue').click()
+        cy.contains('Bills')
+        cy.get(':nth-child(2) > .action > img').click()
+        cy.get('.menu > :nth-child(2)').click()
+        cy.get(':nth-child(3) > .btn').click()
+        cy.contains('Tester Hotel Overview')
         
-
-
-
-
 
     })
 
 
 
-
-
-
 })
+
+

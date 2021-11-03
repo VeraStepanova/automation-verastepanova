@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-11-03T13:27:17.648Z",
+    "end": "2021-11-03T13:27:49.892Z",
+    "duration": 32244,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a714f887-60dd-4f71-a615-ce3cbced473d",
+      "title": "",
+      "fullFile": "cypress/integration/test-suite.spec.js",
+      "file": "cypress/integration/test-suite.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+          "title": "test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create new room",
+              "fullTitle": "test suite Create new room",
+              "timedOut": null,
+              "duration": 9478,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Tester Hotel Overview');\ncy.get(':nth-child(1) > .btn').click();\ncy.get('h2 > .btn').click();\ncy.contains('New Room');\ncy.get(':nth-child(1) > select').select('Single');\ncy.get(':nth-child(2) > input').type('103');\ncy.get(':nth-child(3) > input').type('1');\ncy.get('.checkbox').click();\ncy.get(':nth-child(5) > input').type('1000');\ncy.get(':nth-child(6) > select').select('Balcony');\ncy.get('.blue').click();\ncy.contains('Rooms');\ncy.get(':nth-child(3) > .action > img').click();\ncy.get('.menu > :nth-child(2)').click();\ncy.contains('Rooms');\ncy.get(':nth-child(3) > .btn').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(3) > .action > img`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(3) > .action > img`, but never found it.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/integration/test-suite.spec.js:130:8)",
+                "diff": null
+              },
+              "uuid": "588fe508-5a6a-4fc9-a668-7c44e5419d4d",
+              "parentUUID": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create new client",
+              "fullTitle": "test suite Create new client",
+              "timedOut": null,
+              "duration": 6466,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Tester Hotel Overview');\ncy.get('.blocks > :nth-child(2) > .btn').click();\ncy.get('h2 > .btn').click();\ncy.contains('New Client');\ncy.get(':nth-child(1) > input').type('Vera Stepanova');\ncy.get(':nth-child(2) > input').type('stepa.vera@gmail.com');\ncy.get(':nth-child(3) > input').type('0767354625');\ncy.get('.blue').click();\ncy.contains('Clients');\ncy.get(':nth-child(3) > .action > img').click();\ncy.get('.menu > :nth-child(1)').click(); //cy.contains('Client: 4')\ncy.get(':nth-child(5) > input').type('{selectall}{backspace}');\ncy.get(':nth-child(5) > input').type('0739493445');\ncy.get('.blue').click();\ncy.contains('Clients');\ncy.get(':nth-child(3) > .btn').click();\ncy.contains('Tester Hotel Overview');\ncy.get('.blocks > :nth-child(2) > .btn').click();\ncy.get(':nth-child(3) > .action > img').click();\ncy.get('.menu > :nth-child(2)').click();\ncy.contains('Clients');\ncy.get(':nth-child(3) > .btn').click();\ncy.contains('Tester Hotel Overview');",
+              "err": {},
+              "uuid": "5e9e6acc-2011-4ba8-9ed5-58f1a5342dec",
+              "parentUUID": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Make a new reservation",
+              "fullTitle": "test suite Make a new reservation",
+              "timedOut": null,
+              "duration": 5267,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Tester Hotel Overview');\ncy.get(':nth-child(4) > .btn').click();\ncy.get('h2 > .btn').click();\ncy.contains('New Reservation');\ncy.get(':nth-child(1) > input').type('2021-12-23');\ncy.get(':nth-child(2) > input').type('2021-12-31');\ncy.get(':nth-child(3) > select').select('Mikael Eriksson (#2)');\ncy.get(':nth-child(4) > select').select('Floor 1, Room 101');\ncy.get(':nth-child(5) > select').select('ID: 1');\ncy.get('.blue').click();\ncy.contains('Reservations');\ncy.get(':nth-child(3) > .btn').click();\ncy.get(':nth-child(4) > .btn').click();\ncy.get(':nth-child(2) > .action > img').click();\ncy.get('.menu > :nth-child(2)').click();\ncy.contains('Reservations');\ncy.get(':nth-child(3) > .btn').click();\ncy.contains('Tester Hotel Overview');",
+              "err": {},
+              "uuid": "26fd1f15-a619-4c8e-8e9b-313e4d0b0e2c",
+              "parentUUID": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create new bill",
+              "fullTitle": "test suite Create new bill",
+              "timedOut": null,
+              "duration": 3400,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Tester Hotel Overview');\ncy.get(':nth-child(3) > .btn').click();\ncy.get('h2 > .btn').click();\ncy.contains('New Bill');\ncy.get('input').type('3500');\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.contains('Bills');\ncy.get(':nth-child(2) > .action > img').click();\ncy.get('.menu > :nth-child(2)').click();\ncy.get(':nth-child(3) > .btn').click();\ncy.contains('Tester Hotel Overview');",
+              "err": {},
+              "uuid": "5e9da4bf-f524-4084-9f7c-7a3f23e2d377",
+              "parentUUID": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit new bill",
+              "fullTitle": "test suite Edit new bill",
+              "timedOut": null,
+              "duration": 3920,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Tester Hotel Overview');\ncy.get(':nth-child(3) > .btn').click();\ncy.get('h2 > .btn').click();\ncy.contains('New Bill');\ncy.get('input').type('3500');\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.contains('Bills');\ncy.get(':nth-child(2) > .action > img').click();\ncy.get('.menu > :nth-child(1)').click();\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.contains('Bills');\ncy.get(':nth-child(2) > .action > img').click();\ncy.get('.menu > :nth-child(2)').click();\ncy.get(':nth-child(3) > .btn').click();\ncy.contains('Tester Hotel Overview');",
+              "err": {},
+              "uuid": "d828c25c-4ffe-474b-af6a-70085653e5f4",
+              "parentUUID": "cbc5d771-5f9e-486d-8d6a-a6a376325756",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5e9e6acc-2011-4ba8-9ed5-58f1a5342dec",
+            "26fd1f15-a619-4c8e-8e9b-313e4d0b0e2c",
+            "5e9da4bf-f524-4084-9f7c-7a3f23e2d377",
+            "d828c25c-4ffe-474b-af6a-70085653e5f4"
+          ],
+          "failures": [
+            "588fe508-5a6a-4fc9-a668-7c44e5419d4d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 28531,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
