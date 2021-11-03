@@ -26,6 +26,7 @@ describe('Test Suite', function () {
     })
 
     it('Delete room', function() {
+        roomsFuncs.checkTitleOfRoomsPage(cy, 'Testers Hotel')
         roomsFuncs.performDeleteRoom(cy)
     })
 
@@ -47,6 +48,7 @@ describe('Test Suite', function () {
     })
 
     it('Delete reservation', function () {
+        reservationsFuncs.checkTitleOfReservationsPage(cy, 'Testers Hotel')
         reservationsFuncs.performDeleteReservation(cy)
     })
 
@@ -57,6 +59,7 @@ describe('Test Suite', function () {
     })
 
     it('Delete bill', function () {
+        billsFuncs.checkTitleOfBillsPage(cy, 'Testers Hotel')
         billsFuncs.performDeleteBill(cy)
     })
 
