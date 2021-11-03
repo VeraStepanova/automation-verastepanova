@@ -57,7 +57,7 @@ describe('Test Suite', function () {
     })
 
     it('Delete bill', function () {
-        billsFuncs.performCreateBill(cy)
+        billsFuncs.performDeleteBill(cy)
     })
 
 
