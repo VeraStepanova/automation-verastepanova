@@ -8,18 +8,18 @@ const loginButton = '.btn'
 const logoutButton = '.user > .btn'
 
 // actions / functions
-function checkTitleOfIndexPage(cy){
+function checkTitleOfIndexPage(cy) {
     cy.title().should('eq', titleOfIndexPage)
 }
 
-function performValidLogin (cy, username, password, contentToConfirm){
+function performValidLogin(cy, username, password, contentToConfirm) {
     cy.get(usernameTextField).type(username)
     cy.get(passwordTextField).type(password)
     cy.get(loginButton).click()
     cy.contains(contentToConfirm)
 }
 
-function performValidLogout (cy){
+function performValidLogout(cy) {
     cy.get(logoutButton).click()
 }
 

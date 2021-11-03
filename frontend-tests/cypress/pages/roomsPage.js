@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-
 // elements
 const titleOfRoomsPage = 'Testers Hotel'
 const viewButton = ':nth-child(1) > .btn'
@@ -17,11 +16,11 @@ const deleteButton = '.menu > :nth-child(2)'
 const backButton = ':nth-child(3) > .btn'
 
 // actions / functions
-function checkTitleOfRoomsPage(cy){
+function checkTitleOfRoomsPage(cy) {
     cy.title().should('eq', titleOfRoomsPage)
 }
 
-function performCreateAndDeleteNewRoom(cy){
+function performCreateNewRoom(cy) {
     cy.get(viewButton).click()
     cy.get(createRoomButton).click()
     cy.get(categorySelectField).select('Single')
@@ -31,13 +30,21 @@ function performCreateAndDeleteNewRoom(cy){
     cy.get(priceTextField).type('1000')
     cy.get(featuresSelectField).select('Balcony')
     cy.get(saveButton).click()
+
+}
+
+function performDeleteRoom(cy) {
+    cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(deleteButton).click()
     cy.get(backButton).click()
+
+
 }
 
 // exports
 module.exports = {
     checkTitleOfRoomsPage,
-    performCreateAndDeleteNewRoom
+    performCreateNewRoom,
+    performDeleteRoom
 }
