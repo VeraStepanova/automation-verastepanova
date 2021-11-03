@@ -5,6 +5,7 @@ const titleOfIndexPage = 'Testers Hotel'
 const usernameTextField = ':nth-child(1) > input'
 const passwordTextField = ':nth-child(2) > input'
 const loginButton = '.btn'
+const logoutButton = '.user > .btn'
 
 // actions / functions
 function checkTitleOfIndexPage(cy){
@@ -18,8 +19,13 @@ function performValidLogin (cy, username, password, contentToConfirm){
     cy.contains(contentToConfirm)
 }
 
+function performValidLogout (cy){
+    cy.get(logoutButton).click()
+}
+
 // exports
 module.exports = {
     checkTitleOfIndexPage,
-    performValidLogin
+    performValidLogin,
+    performValidLogout
 }

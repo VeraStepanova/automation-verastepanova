@@ -5,20 +5,21 @@ import * as roomsFuncs from '../pages/roomsPage'
 import * as clientsFuncs from '../pages/clientsPage'
 import * as reservationsFuncs from '../pages/reservationsPage'
 import * as billsFuncs from '../pages/billsPage'
+import * as targets from '../targets/targets'
 
 
 
 // Test suite
 describe ('Test Suite', function(){
     this.beforeEach(()=>{
-        cy.visit('http://localhost:3000')
+        cy.visit(targets.base_url)
         indexFuncs.checkTitleOfIndexPage(cy)
-        indexFuncs.performValidLogin(cy, 'tester01', 'GteteqbQQgSr88SwNExUQv2ydb7xuf8c', 'Tester Hotel Overview')
+        indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
 
     })
 
     this.afterEach(function(){
-        cy.get('.user > .btn').click()
+        indexFuncs.performValidLogout(cy)
 
     })
 
@@ -48,7 +49,7 @@ describe ('Test Suite', function(){
 
     })
 
-    it('create new bill', function(){
+    it('Create new bill', function(){
         billsFuncs.checkTitleOfBillsPage(cy, 'Testers Hotel')
         billsFuncs.performCreateBill(cy)
     })
