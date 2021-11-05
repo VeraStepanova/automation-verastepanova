@@ -19,7 +19,7 @@ function checkTitleOfReservationsPage(cy) {
     cy.title().should('eq', titleOfReservationsPage)
 }
 
-function performCreateReservation(cy) {
+function performCreateReservation(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(createReservationButton).click()
     cy.get(startTextField).type('2021-12-23')
@@ -28,12 +28,16 @@ function performCreateReservation(cy) {
     cy.get(selectRoom).select('Floor 1, Room 101')
     cy.get(selectBill).select('ID: 1')
     cy.get(saveButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
-function performDeleteReservation(cy) {
+function performDeleteReservation(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(deleteButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
 // exports

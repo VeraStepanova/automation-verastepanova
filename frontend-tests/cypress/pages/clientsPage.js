@@ -18,28 +18,34 @@ function checkTitleOfClientsPage(cy) {
     cy.title().should('eq', titleOfClientsPage)
 }
 
-function performCreateNewClient(cy) {
+function performCreateNewClient(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(createClientButton).click()
     cy.get(nameTextField).type('Vera Stepanova').should('have.value', 'Vera Stepanova')
     cy.get(emailTextField).type('vera@gmail.com').should('have.value', 'vera@gmail.com')
     cy.get(telephoneTextField).type('0767354625')
     cy.get(saveButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
-function performEditClient(cy) {
+function performEditClient(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(editButton).click()
     cy.get(editTelephoneTextField).type('{selectall}{backspace}')
     cy.get(editTelephoneTextField).type('0739493445')
     cy.get(saveButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
-function performDeleteClient(cy) {
+function performDeleteClient(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(deleteButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
 // exports

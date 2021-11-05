@@ -13,14 +13,13 @@ const featuresSelectField = ':nth-child(6) > select'
 const saveButton = '.blue'
 const chooseActionButton = ':nth-child(2) > .action > img'
 const deleteButton = '.menu > :nth-child(2)'
-const backButton = ':nth-child(3) > .btn'
 
 // actions / functions
 function checkTitleOfRoomsPage(cy) {
     cy.title().should('eq', titleOfRoomsPage)
 }
 
-function performCreateNewRoom(cy) {
+function performCreateNewRoom(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(createRoomButton).click()
     cy.get(categorySelectField).select('Single')
@@ -30,14 +29,17 @@ function performCreateNewRoom(cy) {
     cy.get(priceTextField).type('1000')
     cy.get(featuresSelectField).select('Balcony')
     cy.get(saveButton).click()
+    cy.contains(contentToConfirm)
+
 
 }
 
-function performDeleteRoom(cy) {
+function performDeleteRoom(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(deleteButton).click()
-    cy.get(backButton).click()
+    cy.contains(contentToConfirm)
+
 
 
 }

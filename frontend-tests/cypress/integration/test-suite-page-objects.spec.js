@@ -22,45 +22,45 @@ describe('Test Suite', function () {
     // Test cases
     it('Create new room', function () {
         roomsFuncs.checkTitleOfRoomsPage(cy, 'Testers Hotel')
-        roomsFuncs.performCreateNewRoom(cy)
+        roomsFuncs.performCreateNewRoom(cy, 'Rooms')
     })
 
     it('Delete room', function() {
         roomsFuncs.checkTitleOfRoomsPage(cy, 'Testers Hotel')
-        roomsFuncs.performDeleteRoom(cy)
+        roomsFuncs.performDeleteRoom(cy, 'Rooms')
     })
 
     it('Create new client', function () {
-        clientsFuncs.performCreateNewClient(cy)
+        clientsFuncs.performCreateNewClient(cy, 'Clients')
     })
 
     it('Edit client', function () {
-        clientsFuncs.performEditClient(cy)
+        clientsFuncs.performEditClient(cy, 'Clients')
     })
 
     it('Delete client', function () {
-        clientsFuncs.performDeleteClient(cy)
+        clientsFuncs.performDeleteClient(cy, 'Clients')
     })
 
     it('Create new reservation', function () {
         reservationsFuncs.checkTitleOfReservationsPage(cy, 'Testers Hotel')
-        reservationsFuncs.performCreateReservation(cy)
+        reservationsFuncs.performCreateReservation(cy, 'Reservations')
     })
 
     it('Delete reservation', function () {
         reservationsFuncs.checkTitleOfReservationsPage(cy, 'Testers Hotel')
-        reservationsFuncs.performDeleteReservation(cy)
+        reservationsFuncs.performDeleteReservation(cy, 'Reservations')
     })
 
 
     it('Create new bill', function () {
         billsFuncs.checkTitleOfBillsPage(cy, 'Testers Hotel')
-        billsFuncs.performCreateBill(cy)
+        billsFuncs.performCreateBill(cy, 'Bills')
     })
 
     it('Delete bill', function () {
         billsFuncs.checkTitleOfBillsPage(cy, 'Testers Hotel')
-        billsFuncs.performDeleteBill(cy)
+        billsFuncs.performDeleteBill(cy, 'Bills')
     })
 
 

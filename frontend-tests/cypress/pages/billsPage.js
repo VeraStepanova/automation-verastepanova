@@ -15,18 +15,22 @@ function checkTitleOfBillsPage(cy) {
     cy.title().should('eq', titleOfBillsPage)
 }
 
-function performCreateBill(cy) {
+function performCreateBill(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(createBillButton).click()
     cy.get(valueTextField).type('3500')
     cy.get(paidCheckbox).click()
     cy.get(saveButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
-function performDeleteBill(cy) {
+function performDeleteBill(cy, contentToConfirm) {
     cy.get(viewButton).click()
     cy.get(chooseActionButton).click()
     cy.get(deleteButton).click()
+    cy.contains(contentToConfirm)
+
 }
 
 
